@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -8,4 +9,16 @@ spec:
   storageClassName: 82266333-azurefile-sc
   resources:
     requests:
+=======
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ce-82266333-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: 82266333-azurefile-sc
+  resources:
+    requests:
+>>>>>>> 5b8e0e1 (ci.yml)
       storage: 1Gi

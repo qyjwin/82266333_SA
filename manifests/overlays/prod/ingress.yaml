@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -14,4 +15,22 @@ spec:
             name: cloud-sample
             port:
               number: 8080
+=======
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cloud-sample-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: sample.ce-82266333-sa.kubepia.net
+    http:
+      paths:
+      - path: /
+        backend:
+          service:
+            name: cloud-sample
+            port:
+              number: 8080
+>>>>>>> 5b8e0e1 (ci.yml)
         pathType: Prefix
