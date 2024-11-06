@@ -57,7 +57,7 @@ jobs:
       run: |
           echo "`ls`"
           cd manifests/overlays/prod
-          kustomize edit set image ${{ secrets.STAPACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ steps.gen-version.outputs.VERSION }}
+          kustomize edit set image ${{ secrets.CI_ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ steps.gen-version.outputs.VERSION }}
           cat kustomization.yaml
     
     - name: Commit files
