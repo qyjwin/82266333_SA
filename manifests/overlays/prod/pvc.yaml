@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ce-82266333-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: 82266333-azurefile-sc
+  resources:
+    requests:
+      storage: 1Gi
