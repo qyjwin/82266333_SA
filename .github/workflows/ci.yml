@@ -40,13 +40,13 @@ jobs:
 
     - name: 'Build & Tag Image'
       run: |
-            docker build -t ${{ secrets.BASEACR_LOGIN_SERVER  }}/${{ env.IMAGE_NAME }}:${{ steps.gen-version.outputs.VERSION }} -f Dockerfile-maven.Dockerfile .
+            docker build -t ${{ secrets.BASEACR_LOGIN_SERVER  }}/${{ env.IMAGE_NAME }}:${{ steps.gen-version.outputs.VERSION }} -f Dockerfile-maven.dockerfile .
             docker tag ${{ secrets.BASEACR_LOGIN_SERVER  }}/${{ env.IMAGE_NAME }}:${{ steps.gen-version.outputs.VERSION }} ${{ secrets.STAPACR_LOGIN_SERVER  }}/${{ env.IMAGE_NAME }}:${{ steps.gen-version.outputs.VERSION }}
     
     - name: 'Push image'
       uses: azure/docker-login@v1
       with:
-        login-server: ${{ secrets.CI_ACR_LOGIN_SERVER  }}
+        login-server: ${{ secrets.CI_ACR_LOGIN_SERVER }}
         username: ${{ secrets.CI_REGISTRY_USERNAME }}
         password: ${{ secrets.CI_REGISTRY_PASSWORD }}
     

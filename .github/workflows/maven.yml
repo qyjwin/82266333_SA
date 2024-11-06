@@ -46,7 +46,7 @@ jobs:
     - name: 'Push image'
       uses: azure/docker-login@v1
       with:
-        login-server: ${{ secrets.CI_ACR_LOGIN_SERVER  }}
+        login-server: ${{ secrets.CI_ACR_LOGIN_SERVER }}
         username: ${{ secrets.CI_REGISTRY_USERNAME }}
         password: ${{ secrets.CI_REGISTRY_PASSWORD }}
     
